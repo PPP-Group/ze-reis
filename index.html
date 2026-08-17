@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zé Reis 20.456 · Deputado Estadual · Minas Gerais</title>
+<meta name="description" content="Zé Reis, candidato a Deputado Estadual por Minas Gerais, número 20.456 Podemos. Trabalho que fica. Norte de Minas.">
+<meta name="theme-color" content="#2B62E8">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zé Reis 20456 · Deputado Estadual MG">
+<meta property="og:description" content="Trabalho que fica. Do Norte de Minas para toda Minas. 20.456 · Podemos.">
+<meta property="og:image" content="assets/hero-banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Inter:wght@400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-banner.webp" type="image/webp">
+<link rel="stylesheet" href="style.css">
+<!-- sem JS as animações de entrada nunca disparariam e o conteúdo ficaria invisível -->
+<noscript><style>.animate-on-scroll{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+
+<!-- ═══════════════ CURSOR PERSONALIZADO ═══════════════ -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- ═══════════════ HEADER FIXO ═══════════════ -->
+<header class="header" id="header">
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="header-inner">
+
+    <a href="#inicio" class="logo" aria-label="Zé Reis, Deputado Estadual: ir para o início">
+      <!-- Logotipo tipográfico recriado em SVG (arquivo-fonte original é .ai) -->
+      <svg class="logo-svg" viewBox="0 0 224 78" role="img" aria-hidden="true" focusable="false">
+        <!-- silhueta estilizada do território mineiro como marca ao lado do nome -->
+        <g transform="translate(0,4) scale(.78)">
+          <!-- Contorno de Minas Gerais calculado a partir das coordenadas reais do IBGE
+               (API de malhas estaduais, código 31, qualidade mínima → 266 pts → RDP ε=2.2 → 33 pts).
+               Referência: lat 14.25–22.91°S, lon 39.86–51.04°W normalizados p/ 90×80 SVG units. -->
+          <path class="logo-mg" d="M 27,37.9 L 6.2,41 L 0.3,53.9 L 4.7,51.2 L 14.4,52.9 L 17.3,57.2 L 17.8,54.6 L 28.6,52.9 L 32.4,66.3 L 36.5,66.9 L 34.7,74.5 L 37.8,80 L 63.6,72.6 L 70.6,69 L 74.2,56 L 81,48.6 L 79.5,37.5 L 87.1,34.5 L 84.2,26.8 L 90,17.2 L 78.1,13.8 L 74.3,7.8 L 60.4,5.2 L 56.9,0.2 L 39.9,9.4 L 40.3,5.7 L 36.5,4.2 L 36.5,7.4 L 33.1,7.4 L 34.1,15 L 28.8,20.4 L 31.5,25.2 Z"/>
+        </g>
+        <text class="logo-nome" x="78" y="42">ZÉ REIS</text>
+        <text class="logo-cargo" x="80" y="66">DEPUTADO ESTADUAL</text>
+      </svg>
+    </a>
+
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#inicio" class="nav-link" data-nav="inicio">Início</a>
+      <a href="#sobre" class="nav-link" data-nav="sobre">Sobre</a>
+      <a href="#propostas" class="nav-link" data-nav="propostas">Propostas</a>
+      <a href="#conquistas" class="nav-link" data-nav="conquistas">Conquistas</a>
+      <a href="#contato" class="nav-link" data-nav="contato">Contato</a>
+    </nav>
+
+    <a href="#contato" class="btn-numero" aria-label="Número na urna 20456: ir para contato">
+      <span>20.456</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+    </a>
+
+    <button class="hamburguer" id="hamburguer" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuMobile">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════════ MENU MOBILE ═══════════════ -->
+<div class="menu-mobile" id="menuMobile" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+  <button class="menu-fechar" id="menuFechar" aria-label="Fechar menu">&times;</button>
+  <nav class="menu-mobile-nav">
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#propostas">Propostas</a>
+    <a href="#conquistas">Conquistas</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <div class="menu-mobile-numero">20.456 <em>Podemos</em></div>
+</div>
+
+<main>
+
+<!-- ═══════════════ 01 · HERO ═══════════════ -->
+<!-- Arte oficial da campanha (extraída de "Apres Ze Reis.pdf", pág. 14): já traz
+     nome, número, slogan, partido e redes desenhados — não sobrepomos texto nosso. -->
+<section class="hero" id="inicio">
+  <div class="hero-banner">
+    <picture>
+      <source srcset="assets/hero-banner.webp" type="image/webp">
+      <img src="assets/hero-banner.jpg" alt="Zé Reis · Deputado Estadual · 20456 · Trabalho que fica · Podemos" width="2953" height="1181" fetchpriority="high" decoding="async">
+    </picture>
+
+    <div class="hero-cta-bar animate-on-scroll">
+      <a href="#propostas" class="btn btn-laranja">Conheça as Propostas <span aria-hidden="true">→</span></a>
+      <a href="https://wa.me/5538998518582" class="btn btn-ghost" target="_blank" rel="noopener">
+        <svg class="ico-wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.35.99 2.51c.12.17 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.19 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+        (38) 99851-8582
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ticker imediatamente abaixo da hero -->
+<div class="ticker ticker-hero" aria-hidden="true">
+  <div class="ticker-trilha" id="tickerTrilhaHero"></div>
+</div>
+
+<!-- ═══════════════ ENSAIE SEU VOTO ═══════════════ -->
+<section class="sec sec-navy sec-compacta" id="ensaie">
+  <div class="container ensaie-grid">
+    <div class="ensaie-texto animate-on-scroll slide-from-left">
+      <h2 class="titulo-sec">Ensaie seu voto</h2>
+      <span class="acento acento-lima"></span>
+
+      <div class="ensaie-numero" aria-hidden="true">
+        <span>20</span><span class="ponto">.</span><span>456</span>
+      </div>
+
+      <p class="sub-sec">
+        Treine agora como vai ser no dia da eleição: a urna real vai pedir exatamente estes passos.
+      </p>
+
+      <ol class="ensaie-passos">
+        <li><strong>1.</strong> <span>Digite o número <strong>2‑0‑4‑5‑6</strong> no teclado da urna.</span></li>
+        <li><strong>2.</strong> <span>Confira na tela: precisa aparecer o nome <strong>ZÉ REIS</strong> e a foto do candidato.</span></li>
+        <li><strong>3.</strong> <span>Aperte a tecla verde <strong>CONFIRMA</strong> para registrar o voto.</span></li>
+      </ol>
+      <p class="ensaie-dica">
+        Errou algum número? Aperte a tecla laranja <strong>CORRIGE</strong> e digite de novo, é assim na urna de verdade também.
+      </p>
+    </div>
+
+    <!-- ── URNA ELETRÔNICA INTERATIVA ── -->
+    <div class="urna-wrap animate-on-scroll zoom-in">
+      <div class="urna-container" id="urna" role="group" aria-label="Urna eletrônica interativa. Digite ou passe o mouse para votar 20456.">
+        <canvas class="urna-confete" id="confete" aria-hidden="true"></canvas>
+
+        <div class="urna-corpo">
+          <div class="urna-tela">
+            <div class="urna-tela-topo">
+              <span>JUSTIÇA ELEITORAL</span>
+              <span>MG · 2026</span>
+            </div>
+            <div class="urna-display" id="urnaDisplay">
+              <div class="urna-cargo">Deputado Estadual</div>
+
+              <div class="urna-linha-numero">
+                <span class="urna-label">Número:</span>
+                <div class="urna-digitos" id="urnaDigitos" aria-live="polite">
+                  <span class="digito"></span><span class="digito"></span><span class="digito"></span>
+                  <span class="digito"></span><span class="digito"></span>
+                </div>
+              </div>
+
+              <div class="urna-resultado" id="urnaResultado">
+                <div class="urna-dados">
+                  <p><span>Nome:</span> <strong>ZÉ REIS</strong></p>
+                  <p><span>Partido:</span> <strong>PODEMOS</strong></p>
+                  <p class="urna-fim-msg">Seu voto para</p>
+                  <p class="urna-fim-cargo">DEPUTADO ESTADUAL</p>
+                </div>
+                <picture>
+                  <source srcset="assets/foto-candidato-sem-fundo.webp" type="image/webp">
+                  <img src="assets/foto-candidato-sem-fundo.png" alt="Zé Reis" class="urna-foto" width="120" height="150" loading="lazy" decoding="async">
+                </picture>
+              </div>
+
+              <div class="urna-rodape" id="urnaRodape">
+                <span class="urna-piscar">Aperte a tecla:</span>
+                <span class="urna-verde">CONFIRMA para CONFIRMAR este voto</span><br>
+                <span class="urna-laranja">CORRIGE para REINICIAR este voto</span>
+              </div>
+
+              <div class="urna-fim" id="urnaFim">FIM</div>
+            </div>
+          </div>
+
+          <div class="urna-teclado" id="urnaTeclado">
+            <button class="tecla" data-tecla="1">1</button>
+            <button class="tecla" data-tecla="2">2</button>
+            <button class="tecla" data-tecla="3">3</button>
+            <button class="tecla" data-tecla="4">4</button>
+            <button class="tecla" data-tecla="5">5</button>
+            <button class="tecla" data-tecla="6">6</button>
+            <button class="tecla" data-tecla="7">7</button>
+            <button class="tecla" data-tecla="8">8</button>
+            <button class="tecla" data-tecla="9">9</button>
+            <button class="tecla tecla-vazia" disabled aria-hidden="true"></button>
+            <button class="tecla" data-tecla="0">0</button>
+            <button class="tecla tecla-vazia" disabled aria-hidden="true"></button>
+
+            <button class="tecla-larga tecla-branco" data-acao="branco">Branco</button>
+            <button class="tecla-larga tecla-corrige" data-acao="corrige">Corrige</button>
+            <button class="tecla-larga tecla-confirma" data-acao="confirma" id="btnConfirma">Confirma</button>
+          </div>
+        </div>
+
+        <p class="urna-dica" id="urnaDica">Passe o mouse ou toque para votar</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 02 · SOBRE ═══════════════ -->
+<section id="sobre">
+
+  <!-- A · Quem é Zé Reis -->
+  <div class="sec sec-claro" id="quem-e">
+    <div class="container quem-grid">
+      <div class="quem-texto animate-on-scroll slide-from-left">
+        <h2 class="titulo-sec titulo-escuro">Quem é Zé Reis</h2>
+        <span class="acento"></span>
+        <p>
+          Zé Reis nasceu em Januária, mas foi criado na roça na comunidade de
+          Flexeira, onde a família plantava feijão e arroz e cuidava do gado até
+          ele completar nove anos. Filho de Diaquino e Francisca, aprendeu cedo
+          o que significa servir: viu o pai abrir estrada, apoiar escola e socorrer
+          vizinho sem nunca ter ocupado um cargo público para isso.
+        </p>
+        <p>
+          Formado em Direito, com mestrado concluído e doutorado em andamento
+          pela UFMG/Unimontes, Zé Reis construiu a carreira pública inteira dentro
+          do Norte de Minas: foi vereador e prefeito por dois mandatos em Bonito
+          de Minas, presidiu a AMAMS, foi deputado estadual e hoje é vice-prefeito
+          de Januária. Uma trajetória de quem já ocupou a função e sabe fazer,
+          não de quem está começando agora.
+        </p>
+        <div class="quem-selos">
+          <span class="selo">Januária · MG</span>
+          <span class="selo">Direito · UFMG/Unimontes</span>
+          <span class="selo">Norte de Minas</span>
+        </div>
+      </div>
+
+      <div class="quem-foto animate-on-scroll slide-from-right">
+        <picture>
+          <source srcset="assets/foto-2.webp" type="image/webp">
+          <img src="assets/foto-2.jpg" alt="Retrato de Zé Reis" width="1100" height="1650" loading="lazy" decoding="async">
+        </picture>
+        <div class="quem-foto-tag">Trabalho que fica</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B · Linha do tempo -->
+  <div class="sec sec-navy" id="trajetoria">
+    <div class="container">
+      <h2 class="titulo-sec animate-on-scroll">Trajetória</h2>
+      <span class="acento acento-lima animate-on-scroll"></span>
+      <p class="sub-sec animate-on-scroll">Quinze anos de serviço público construídos dentro do Norte de Minas.</p>
+
+      <div class="timeline" id="timeline">
+        <div class="timeline-linha" aria-hidden="true"></div>
+        <ol class="timeline-itens">
+          <li class="timeline-item animate-on-scroll">
+            <div class="timeline-no" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V9h14v11z"/></svg>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-ano">2008</span>
+              <p>Início na política: candidato a vereador em Bonito de Minas.</p>
+            </div>
+          </li>
+          <li class="timeline-item animate-on-scroll">
+            <div class="timeline-no" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2 2 7v2h20V7L12 2zM4 11v7H2v2h20v-2h-2v-7h-2v7h-3v-7h-2v7h-3v-7H6v7H4v-7z"/></svg>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-ano">2009-2012</span>
+              <p>Vereador de Bonito de Minas.</p>
+            </div>
+          </li>
+          <li class="timeline-item animate-on-scroll">
+            <div class="timeline-no" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 4 9v12h6v-6h4v6h6V9l-8-6z"/></svg>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-ano">2013-2020</span>
+              <p>Dois mandatos como Prefeito de Bonito de Minas.</p>
+            </div>
+          </li>
+          <li class="timeline-item animate-on-scroll">
+            <div class="timeline-no" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-ano">2017-2018</span>
+              <p>Presidente da AMAMS, Associação dos Municípios da Área Mineira da SUDENE.</p>
+            </div>
+          </li>
+          <li class="timeline-item animate-on-scroll">
+            <div class="timeline-no" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            </div>
+            <div class="timeline-card destaque">
+              <span class="timeline-ano">2019-2022</span>
+              <p>Deputado Estadual de Minas Gerais.</p>
+            </div>
+          </li>
+          <li class="timeline-item animate-on-scroll">
+            <div class="timeline-no" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4.5 8-11a8 8 0 1 0-16 0c0 6.5 8 11 8 11zm0-14a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-ano">2023-2024</span>
+              <p>Secretário Municipal de Meio Ambiente de Belo Horizonte.</p>
+            </div>
+          </li>
+          <li class="timeline-item animate-on-scroll">
+            <div class="timeline-no" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-ano">2025</span>
+              <p>Mestrado concluído · Doutorado em Sociedade, Ambiente e Território (UFMG/Unimontes).</p>
+            </div>
+          </li>
+          <li class="timeline-item animate-on-scroll">
+            <div class="timeline-no no-atual" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2 4 7v13h5v-6h6v6h5V7l-8-5z"/></svg>
+            </div>
+            <div class="timeline-card destaque">
+              <span class="timeline-ano">Hoje</span>
+              <p>Vice-prefeito de Januária · Candidato a Deputado Estadual.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticker decorativo -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-trilha" id="tickerTrilha"></div>
+  </div>
+
+  <!-- C · Galeria -->
+  <div class="sec sec-claro" id="galeria">
+    <div class="container">
+      <h2 class="titulo-sec titulo-escuro animate-on-scroll">Na estrada, com a gente</h2>
+      <span class="acento animate-on-scroll"></span>
+      <p class="sub-sec sub-escuro animate-on-scroll">Registros da caminhada pelo Norte de Minas.</p>
+
+      <div class="galeria-grid" id="galeriaGrid">
+
+        <!-- Esquerda: 4 fotos em retrato, grade 2×2 -->
+        <div class="galeria-col galeria-col-retratos">
+          <button class="galeria-item animate-on-scroll" aria-label="Ampliar foto 1">
+            <picture><source srcset="assets/evento-1.webp" type="image/webp">
+            <img src="assets/evento-1.jpg" alt="Zé Reis discursando ao microfone para a comunidade" width="1050" height="1400" loading="lazy" decoding="async"></picture>
+          </button>
+          <button class="galeria-item animate-on-scroll" aria-label="Ampliar foto 3">
+            <picture><source srcset="assets/evento-3.webp" type="image/webp">
+            <img src="assets/evento-3.jpg" alt="Zé Reis conversando com grupo de moradores" width="1050" height="1400" loading="lazy" decoding="async"></picture>
+          </button>
+          <button class="galeria-item animate-on-scroll" aria-label="Ampliar foto 5">
+            <picture><source srcset="assets/evento-5.webp" type="image/webp">
+            <img src="assets/evento-5.jpg" alt="Zé Reis em visita a propriedade rural" width="1050" height="1400" loading="lazy" decoding="async"></picture>
+          </button>
+          <button class="galeria-item animate-on-scroll" aria-label="Ampliar foto 6">
+            <picture><source srcset="assets/evento-6.webp" type="image/webp">
+            <img src="assets/evento-6.jpg" alt="Zé Reis abraçando uma apoiadora em evento da campanha" width="1050" height="1400" loading="lazy" decoding="async"></picture>
+          </button>
+        </div>
+
+        <!-- Direita: 2 fotos em paisagem, empilhadas -->
+        <div class="galeria-col galeria-col-paisagens">
+          <button class="galeria-item animate-on-scroll" aria-label="Ampliar foto 2">
+            <picture><source srcset="assets/evento-2.webp" type="image/webp">
+            <img src="assets/evento-2.jpg" alt="Zé Reis em reunião com moradores da comunidade" width="1400" height="1050" loading="lazy" decoding="async"></picture>
+          </button>
+          <button class="galeria-item animate-on-scroll" aria-label="Ampliar foto 4">
+            <picture><source srcset="assets/evento-4.webp" type="image/webp">
+            <img src="assets/evento-4.jpg" alt="Zé Reis em visita, foto com a comunidade" width="1400" height="1050" loading="lazy" decoding="async"></picture>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- D · Vídeos -->
+  <div class="sec sec-azul" id="videos">
+    <div class="container">
+      <h2 class="titulo-sec animate-on-scroll">Vídeos</h2>
+      <span class="acento acento-lima animate-on-scroll"></span>
+      <p class="sub-sec animate-on-scroll">A campanha em movimento.</p>
+
+      <div class="videos-grid">
+        <!-- TODO: substituir data-src pelo link do vídeo (YouTube/Instagram embed) e remover data-placeholder -->
+        <div class="video-card animate-on-scroll" data-placeholder>
+          <iframe title="Vídeo da campanha 1" data-src="URL_DO_VIDEO" loading="lazy" allowfullscreen
+                  allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture"></iframe>
+          <div class="video-placeholder">
+            <span class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <p>Em breve</p>
+          </div>
+        </div>
+        <!-- TODO: substituir data-src pelo link do vídeo -->
+        <div class="video-card animate-on-scroll" data-placeholder>
+          <iframe title="Vídeo da campanha 2" data-src="URL_DO_VIDEO" loading="lazy" allowfullscreen
+                  allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture"></iframe>
+          <div class="video-placeholder">
+            <span class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <p>Em breve</p>
+          </div>
+        </div>
+        <!-- TODO: substituir data-src pelo link do vídeo -->
+        <div class="video-card animate-on-scroll" data-placeholder>
+          <iframe title="Vídeo da campanha 3" data-src="URL_DO_VIDEO" loading="lazy" allowfullscreen
+                  allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture"></iframe>
+          <div class="video-placeholder">
+            <span class="video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            <p>Em breve</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- E · Apoios -->
+  <div class="sec sec-claro" id="apoios">
+    <div class="container">
+      <h2 class="titulo-sec titulo-escuro animate-on-scroll">Quem caminha junto</h2>
+      <span class="acento animate-on-scroll"></span>
+      <p class="sub-sec sub-escuro animate-on-scroll">Lideranças e parceiros do Norte de Minas.</p>
+
+      <div class="apoios-grid">
+        <!-- APOIO 1: substituir com nome, cargo e texto real -->
+        <figure class="apoio-card animate-on-scroll">
+          <div class="apoio-avatar" aria-hidden="true">ND</div>
+          <blockquote>“Substituir por depoimento real do apoiador. Um trecho curto, de duas a três linhas, funciona melhor.”</blockquote>
+          <figcaption><strong>Nome do apoiador</strong><span>Cargo · Cidade</span></figcaption>
+        </figure>
+        <!-- APOIO 2: substituir com nome, cargo e texto real -->
+        <figure class="apoio-card animate-on-scroll">
+          <div class="apoio-avatar" aria-hidden="true">ND</div>
+          <blockquote>“Substituir por depoimento real do apoiador. Um trecho curto, de duas a três linhas, funciona melhor.”</blockquote>
+          <figcaption><strong>Nome do apoiador</strong><span>Cargo · Cidade</span></figcaption>
+        </figure>
+        <!-- APOIO 3: substituir com nome, cargo e texto real -->
+        <figure class="apoio-card animate-on-scroll">
+          <div class="apoio-avatar" aria-hidden="true">ND</div>
+          <blockquote>“Substituir por depoimento real do apoiador. Um trecho curto, de duas a três linhas, funciona melhor.”</blockquote>
+          <figcaption><strong>Nome do apoiador</strong><span>Cargo · Cidade</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 03 · PROPOSTAS ═══════════════ -->
+<section class="sec sec-azul" id="propostas">
+  <div class="container">
+    <h2 class="titulo-sec animate-on-scroll">Meus compromissos com você</h2>
+    <span class="acento acento-lima animate-on-scroll"></span>
+    <p class="sub-sec animate-on-scroll">Seis eixos para transformar o Norte de Minas e Minas inteira.</p>
+
+    <div class="propostas-grid">
+      <article class="proposta-card animate-on-scroll" style="--tema:#FF4A00">
+        <span class="proposta-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 21.35 10.55 20C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/><path fill="#fff" d="M11 7h2v3h3v2h-3v3h-2v-3H8v-2h3z"/></svg>
+        </span>
+        <h3>Saúde</h3>
+        <p>Levar mais estrutura de saúde para perto de quem precisa, equipamento, atendimento e menos gente tendo que sair da própria cidade pra ser atendida.</p>
+      </article>
+
+      <article class="proposta-card animate-on-scroll" style="--tema:#FF9B0D">
+        <span class="proposta-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M9.5 2 3 22h3.2l1.2-4h9.2l1.2 4H21L14.5 2h-5zm.6 3h3.8l1.2 4h-6.2l1.2-4zM8.6 12h6.8l1.2 4H7.4l1.2-4z"/></svg>
+        </span>
+        <h3>Infraestrutura e Estradas</h3>
+        <p>Estrada boa é economia, é saúde, é gente conseguindo ir e vir. Seguir destravando as vias que ligam o Norte de Minas ao resto do estado.</p>
+      </article>
+
+      <article class="proposta-card animate-on-scroll" style="--tema:#D9E021">
+        <span class="proposta-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2c-1.5 2-2.5 4-2.5 6.5S10.5 13 12 15c1.5-2 2.5-4 2.5-6.5S13.5 4 12 2zM7 8c-1.7 1-3 2.6-3.5 4.5C3 14.4 3.3 16.4 4.3 18c1.7-1 3-2.6 3.5-4.5.5-1.9.2-3.9-.8-5.5zm10 0c-1 1.6-1.3 3.6-.8 5.5.5 1.9 1.8 3.5 3.5 4.5 1-1.6 1.3-3.6.8-5.5-.5-1.9-1.8-3.5-3.5-4.5zM11 17v5h2v-5h-2z"/></svg>
+        </span>
+        <h3>Agricultura e Geração de Renda</h3>
+        <p>Apoio técnico, equipamento e crédito pra quem produz: do pequeno agricultor à associação, fortalecendo quem sustenta a economia da região.</p>
+      </article>
+
+      <article class="proposta-card animate-on-scroll" style="--tema:#00C2B5">
+        <span class="proposta-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2 2 7v2h20V7L12 2zM4 11v7H2v3h20v-3h-2v-7h-3v7h-2v-7h-2v7h-2v-7H8v7H7v-7H4z"/></svg>
+        </span>
+        <h3>Municipalismo</h3>
+        <p>Prefeitura forte é cidade que funciona. Articulação direta com cada município do Norte de Minas, não só com a capital.</p>
+      </article>
+
+      <article class="proposta-card animate-on-scroll" style="--tema:#3711C0">
+        <span class="proposta-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+        </span>
+        <h3>Meio Ambiente e Defesa Animal</h3>
+        <p>Um Norte de Minas que cuida do seu território e de quem não tem voz para pedir isso.</p>
+      </article>
+
+      <article class="proposta-card animate-on-scroll" style="--tema:#FF3D8A">
+        <span class="proposta-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </span>
+        <h3>Famílias e Juventude</h3>
+        <p>Oportunidade para quem quer ficar e crescer na própria terra, sem precisar ir embora para ter sucesso no futuro.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 04 · CONQUISTAS ═══════════════ -->
+<section class="sec sec-quase-branco" id="conquistas">
+  <div class="container">
+    <h2 class="titulo-sec titulo-escuro animate-on-scroll">Um pouquinho do que a gente já fez</h2>
+    <span class="acento animate-on-scroll"></span>
+    <p class="sub-sec sub-escuro animate-on-scroll">Obra entregue, recurso pago, resultado que o eleitor consegue ver.</p>
+
+    <!-- A · Números de impacto -->
+    <div class="numeros-grid" id="numeros">
+      <div class="numero-bloco animate-on-scroll">
+        <span class="numero-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M9.5 2 3 22h3.2l1.2-4h9.2l1.2 4H21L14.5 2h-5zm.6 3h3.8l1.2 4h-6.2l1.2-4zM8.6 12h6.8l1.2 4H7.4l1.2-4z"/></svg>
+        </span>
+        <p class="numero-valor"><em>R$</em><span class="contador" data-count="90">0</span><em>Mi</em></p>
+        <p class="numero-label">Destinados para pavimentação da MGC-479</p>
+      </div>
+      <div class="numero-bloco animate-on-scroll">
+        <span class="numero-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+        </span>
+        <p class="numero-valor"><em>R$</em><span class="contador" data-count="1">0</span><em>Mi</em></p>
+        <p class="numero-label">Para o Hospital Municipal de Januária</p>
+      </div>
+      <div class="numero-bloco animate-on-scroll">
+        <span class="numero-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10z"/></svg>
+        </span>
+        <p class="numero-valor"><span class="contador" data-count="2">0</span></p>
+        <p class="numero-label">Mandatos como Prefeito de Bonito de Minas</p>
+      </div>
+      <div class="numero-bloco animate-on-scroll">
+        <span class="numero-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2 2 7v2h20V7L12 2zM4 11v7H2v3h20v-3h-2v-7h-3v7h-2v-7h-2v7h-2v-7H8v7H7v-7H4z"/></svg>
+        </span>
+        <p class="numero-valor"><span class="contador" data-count="15">0</span><em>+</em></p>
+        <p class="numero-label">Anos de serviço público no Norte de Minas</p>
+      </div>
+    </div>
+
+    <!-- B · Cards de realizações -->
+    <h3 class="titulo-sub animate-on-scroll">Realizações</h3>
+    <div class="realizacoes-grid">
+      <article class="realizacao-card animate-on-scroll">
+        <h4>MGC-479 até Bom Jantar</h4>
+        <p>Pavimentação que liga Januária ao asfalto do Brasil, reduzindo poeira, risco de doença respiratória e tempo de acesso à sede do município. Obra com origem em emenda do mandato de deputado estadual.</p>
+        <span class="realizacao-valor">≈ R$ 90 milhões</span>
+      </article>
+
+      <article class="realizacao-card animate-on-scroll">
+        <h4>Usina de Oxigênio no Hospital Municipal</h4>
+        <p>Recurso do Fundo Municipal de Saúde de Januária para enfrentamento da Covid-19. O investimento levou o hospital a realizar cirurgias eletivas que antes exigiam encaminhamento a outros municípios.</p>
+        <span class="realizacao-valor">R$ 250 mil + R$ 750 mil · pagos</span>
+      </article>
+
+      <!-- TODO: preencher dados — Iluminação para o Brejo do Amparo -->
+      <article class="realizacao-card realizacao-pendente animate-on-scroll">
+        <h4>Iluminação para o Brejo do Amparo</h4>
+        <p>Descrição da obra a ser preenchida com os dados oficiais da campanha.</p>
+        <span class="realizacao-valor">Dados pendentes</span>
+      </article>
+
+      <!-- TODO: preencher dados — Asfalto até o Bairro Moradeiras -->
+      <article class="realizacao-card realizacao-pendente animate-on-scroll">
+        <h4>Asfalto até o Bairro Moradeiras</h4>
+        <p>Descrição da obra a ser preenchida com os dados oficiais da campanha.</p>
+        <span class="realizacao-valor">Dados pendentes</span>
+      </article>
+
+      <!-- TODO: preencher dados — Energia Elétrica para a Praia -->
+      <article class="realizacao-card realizacao-pendente animate-on-scroll">
+        <h4>Energia Elétrica para a Praia</h4>
+        <p>Descrição da obra a ser preenchida com os dados oficiais da campanha.</p>
+        <span class="realizacao-valor">Dados pendentes</span>
+      </article>
+
+      <!-- TODO: preencher dados — Tomógrafo -->
+      <article class="realizacao-card realizacao-pendente animate-on-scroll">
+        <h4>Tomógrafo</h4>
+        <p>Descrição do equipamento e do impacto no atendimento, a ser preenchida com os dados oficiais da campanha.</p>
+        <span class="realizacao-valor">Dados pendentes</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 05 · CONTATO ═══════════════ -->
+<section class="sec sec-gradiente" id="contato">
+  <div class="container">
+    <h2 class="titulo-sec animate-on-scroll">Fale com a gente</h2>
+    <span class="acento acento-lima animate-on-scroll"></span>
+    <p class="sub-sec animate-on-scroll">Sua mensagem chega direto na equipe da campanha.</p>
+
+    <div class="contato-grid">
+      <!-- Formulário -->
+      <form class="form animate-on-scroll slide-from-left" id="formContato" novalidate>
+        <div class="campo">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" autocomplete="name" required>
+          <span class="erro" data-erro="nome"></span>
+        </div>
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+          <span class="erro" data-erro="email"></span>
+        </div>
+        <div class="campo">
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" name="telefone" autocomplete="tel" placeholder="(38) 90000-0000" required>
+          <span class="erro" data-erro="telefone"></span>
+        </div>
+        <div class="campo">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+          <span class="erro" data-erro="mensagem"></span>
+        </div>
+        <!-- Sem backend: a submissão é validada e confirmada apenas no front.
+             TODO: apontar o action/fetch para o endpoint da campanha. -->
+        <button type="submit" class="btn btn-laranja btn-bloco">Enviar mensagem</button>
+        <p class="form-sucesso" id="formSucesso" role="status">
+          Mensagem enviada! A equipe do Zé Reis vai retornar em breve.
+        </p>
+      </form>
+
+      <!-- CTAs -->
+      <div class="contato-ctas">
+        <a href="https://wa.me/5538998518582" target="_blank" rel="noopener" class="cta-card cta-whats animate-on-scroll slide-from-right">
+          <svg class="cta-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.52 12c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.35.99 2.51c.12.17 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.19 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+          <h3>Conversa direta</h3>
+          <p>Chame no WhatsApp e fale com a equipe da campanha.</p>
+          <span class="cta-btn">Chamar no WhatsApp</span>
+        </a>
+
+        <button type="button" class="cta-card cta-voluntario animate-on-scroll slide-from-right" id="btnVoluntario">
+          <svg class="cta-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          <h3>Quer ajudar?</h3>
+          <p>Quer ajudar a levar essa campanha pra cada canto do Norte de Minas?</p>
+          <span class="cta-btn">Quero ser voluntário</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Redes sociais -->
+    <div class="redes animate-on-scroll">
+      <p>Siga a campanha</p>
+      <div class="redes-icones">
+        <!-- TODO: substituir com URL real -->
+        <a href="#" aria-label="Instagram" class="rede">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.72A6.12 6.12 0 1 0 18.12 12 6.12 6.12 0 0 0 12 5.88zm0 10.1A3.98 3.98 0 1 1 15.98 12 3.98 3.98 0 0 1 12 15.98zm7.79-10.34a1.43 1.43 0 1 1-1.43-1.43 1.43 1.43 0 0 1 1.43 1.43z"/></svg>
+        </a>
+        <!-- TODO: substituir com URL real -->
+        <a href="#" aria-label="Facebook" class="rede">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg>
+        </a>
+        <!-- TODO: substituir com URL real -->
+        <a href="#" aria-label="YouTube" class="rede">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 12s0-3.7-.47-5.47a2.9 2.9 0 0 0-2.04-2.06C18.72 4 12 4 12 4s-6.72 0-8.49.47A2.9 2.9 0 0 0 1.47 6.53C1 8.3 1 12 1 12s0 3.7.47 5.47a2.9 2.9 0 0 0 2.04 2.06C5.28 20 12 20 12 20s6.72 0 8.49-.47a2.9 2.9 0 0 0 2.04-2.06C23 15.7 23 12 23 12zM9.8 15.4V8.6l5.9 3.4-5.9 3.4z"/></svg>
+        </a>
+        <!-- TODO: substituir com URL real -->
+        <a href="#" aria-label="TikTok" class="rede">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 0 1 0-5.18c.27 0 .53.04.77.12v-3.2a5.8 5.8 0 0 0-.77-.05A5.72 5.72 0 0 0 4.14 15.3 5.72 5.72 0 0 0 9.86 21a5.72 5.72 0 0 0 5.72-5.72V9.01a7.35 7.35 0 0 0 4.28 1.37V7.3a4.28 4.28 0 0 1-3.26-1.48z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════ TICKER + RODAPÉ ═══════════════ -->
+<div class="ticker ticker-rodape" aria-hidden="true">
+  <div class="ticker-trilha" id="tickerTrilha2"></div>
+</div>
+
+<footer class="rodape">
+  <div class="container rodape-grid">
+    <div class="rodape-col">
+      <svg class="logo-svg logo-rodape" viewBox="0 0 224 78" role="img" aria-label="Zé Reis · Deputado Estadual">
+        <g transform="translate(0,4) scale(.78)">
+          <!-- Contorno de Minas Gerais calculado a partir das coordenadas reais do IBGE
+               (API de malhas estaduais, código 31, qualidade mínima → 266 pts → RDP ε=2.2 → 33 pts).
+               Referência: lat 14.25–22.91°S, lon 39.86–51.04°W normalizados p/ 90×80 SVG units. -->
+          <path class="logo-mg" d="M 27,37.9 L 6.2,41 L 0.3,53.9 L 4.7,51.2 L 14.4,52.9 L 17.3,57.2 L 17.8,54.6 L 28.6,52.9 L 32.4,66.3 L 36.5,66.9 L 34.7,74.5 L 37.8,80 L 63.6,72.6 L 70.6,69 L 74.2,56 L 81,48.6 L 79.5,37.5 L 87.1,34.5 L 84.2,26.8 L 90,17.2 L 78.1,13.8 L 74.3,7.8 L 60.4,5.2 L 56.9,0.2 L 39.9,9.4 L 40.3,5.7 L 36.5,4.2 L 36.5,7.4 L 33.1,7.4 L 34.1,15 L 28.8,20.4 L 31.5,25.2 Z"/>
+        </g>
+        <text class="logo-nome" x="78" y="42">ZÉ REIS</text>
+        <text class="logo-cargo" x="80" y="66">DEPUTADO ESTADUAL</text>
+      </svg>
+      <p class="rodape-slogan">Trabalho que fica</p>
+    </div>
+
+    <div class="rodape-col rodape-numero">
+      <strong>20.456</strong>
+      <span>Podemos</span>
+    </div>
+
+    <div class="rodape-col rodape-legal">
+      <!-- TODO: preencher o CNPJ da campanha -->
+      <p>CNPJ da Campanha: <span class="pendente">a preencher</span></p>
+      <p>Material produzido e pago pelo Comitê Financeiro da Campanha de Zé Reis.</p>
+      <div class="rodape-redes">
+        <!-- TODO: substituir com URL real -->
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.72A6.12 6.12 0 1 0 18.12 12 6.12 6.12 0 0 0 12 5.88zm0 10.1A3.98 3.98 0 1 1 15.98 12 3.98 3.98 0 0 1 12 15.98zm7.79-10.34a1.43 1.43 0 1 1-1.43-1.43 1.43 1.43 0 0 1 1.43 1.43z"/></svg></a>
+        <!-- TODO: substituir com URL real -->
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg></a>
+        <!-- TODO: substituir com URL real -->
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 12s0-3.7-.47-5.47a2.9 2.9 0 0 0-2.04-2.06C18.72 4 12 4 12 4s-6.72 0-8.49.47A2.9 2.9 0 0 0 1.47 6.53C1 8.3 1 12 1 12s0 3.7.47 5.47a2.9 2.9 0 0 0 2.04 2.06C5.28 20 12 20 12 20s6.72 0 8.49-.47a2.9 2.9 0 0 0 2.04-2.06C23 15.7 23 12 23 12zM9.8 15.4V8.6l5.9 3.4-5.9 3.4z"/></svg></a>
+        <!-- TODO: substituir com URL real -->
+        <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 0 1 0-5.18c.27 0 .53.04.77.12v-3.2a5.8 5.8 0 0 0-.77-.05A5.72 5.72 0 0 0 4.14 15.3 5.72 5.72 0 0 0 9.86 21a5.72 5.72 0 0 0 5.72-5.72V9.01a7.35 7.35 0 0 0 4.28 1.37V7.3a4.28 4.28 0 0 1-3.26-1.48z"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <p class="rodape-copy">© 2026 Zé Reis · Deputado Estadual · Todos os direitos reservados.</p>
+</footer>
+
+<!-- ═══════════════ BOTÃO FLUTUANTE WHATSAPP ═══════════════ -->
+<a href="https://wa.me/5538998518582" class="whats-float" target="_blank" rel="noopener" aria-label="Fale com o Zé Reis no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.52 12c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.35.99 2.51c.12.17 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.19 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+  <span class="whats-tooltip">Fale com o Zé Reis</span>
+</a>
+
+<!-- ═══════════════ LIGHTBOX ═══════════════ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="lb-fechar" id="lbFechar" aria-label="Fechar">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Foto anterior">&#8249;</button>
+  <img id="lbImg" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Próxima foto">&#8250;</button>
+  <p class="lb-contador" id="lbContador"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
