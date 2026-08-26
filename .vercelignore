@@ -1,0 +1,10 @@
+# Arquivos usados apenas pelo deploy no Easypanel (Nixpacks) —
+# a presença de package.json/server.js fazia o Vercel empacotar
+# o site inteiro como função serverless, quebrando CSS/JS/imagens.
+package.json
+server.js
+nixpacks.toml
+
+# Materiais originais (fotos brutas, identidade visual, docs) —
+# ficam versionados no repo, mas não precisam ir pro site publicado.
+materiais-originais/
