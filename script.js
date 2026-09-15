@@ -466,35 +466,42 @@
       };
 
       // mode:'no-cors' é necessário porque o Apps Script Web App não responde
-      // com cabeçalhos CORS. Isso impede ler o corpo da resposta: "sucesso"
-      // aqui significa apenas que o fetch não lançou erro de rede, não uma
-      // confirmação vinda do servidor. É a limitação conhecida dessa técnica.
-      // Timeout de 15s: o Apps Script pode demorar alguns segundos pra
-      // responder (cold start), mas sem um limite o botão fica preso em
-      // "Enviando..." indefinidamente se a rede travar de vez.
-      const controle = new AbortController();
-      const tempoEsgotado = setTimeout(() => controle.abort(), 15000);
+      // com cabeçalhos CORS. Isso impede ler o corpo da resposta, então nunca
+      // temos uma confirmação real vinda do servidor — é a limitação
+      // conhecida dessa técnica.
+      //
+      // O fetch em si só "resolve" depois que o navegador segue um redirect
+      // interno que o Apps Script faz pra devolver a resposta, e essa etapa
+      // pode demorar de forma imprevisível (3s numa hora, 30s+ em outra),
+      // mesmo quando a gravação na planilha já aconteceu em menos de 1s. Por
+      // isso NÃO esperamos o fetch terminar pra mostrar sucesso: depois de um
+      // tempo curto e fixo (a gravação já teria acontecido de sobra), assume
+      // sucesso. Só mostramos erro se a rede falhar rápido e de forma
+      // explícita (sem internet, domínio incorreto, etc.) dentro dessa janela.
+      let concluido = false;
 
       fetch(APPS_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(dados),
-        signal: controle.signal,
-      })
-        .then(() => {
-          sucesso.classList.add('visivel');
-          form.reset();
-          setTimeout(() => sucesso.classList.remove('visivel'), 6000);
-        })
-        .catch(() => {
-          if (erroEnvio) erroEnvio.classList.add('visivel');
-        })
-        .finally(() => {
-          clearTimeout(tempoEsgotado);
-          btnEnviar.disabled = false;
-          btnEnviar.textContent = textoBtnOriginal;
-        });
+      }).catch(() => {
+        if (concluido) return;
+        concluido = true;
+        if (erroEnvio) erroEnvio.classList.add('visivel');
+        btnEnviar.disabled = false;
+        btnEnviar.textContent = textoBtnOriginal;
+      });
+
+      setTimeout(() => {
+        if (concluido) return;
+        concluido = true;
+        sucesso.classList.add('visivel');
+        form.reset();
+        btnEnviar.disabled = false;
+        btnEnviar.textContent = textoBtnOriginal;
+        setTimeout(() => sucesso.classList.remove('visivel'), 6000);
+      }, 4000);
     });
 
     // CTA "Quero ser voluntário"
