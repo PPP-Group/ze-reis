@@ -125,7 +125,9 @@ ol, ul { list-style: none; }
 .btn-ghost:hover { background: var(--branco); color: var(--azul-navy); transform: translateY(-3px); }
 .btn-ghost .ico-wa { width: 20px; height: 20px; fill: currentColor; }
 .btn-bloco { width: 100%; justify-content: center; }
-.btn:disabled { opacity: .6; cursor: not-allowed; transform: none !important; }
+.btn:disabled { cursor: not-allowed; transform: none !important; box-shadow: none; }
+.btn-laranja:disabled { background: var(--laranja-claro); color: rgba(0,0,63,.65); }
+.btn-laranja:disabled:hover { background: var(--laranja-claro); }
 
 /* ═══════════ CURSOR PERSONALIZADO ═══════════ */
 .cursor-dot, .cursor-ring { display: none; }

@@ -469,11 +469,18 @@
       // com cabeçalhos CORS. Isso impede ler o corpo da resposta: "sucesso"
       // aqui significa apenas que o fetch não lançou erro de rede, não uma
       // confirmação vinda do servidor. É a limitação conhecida dessa técnica.
+      // Timeout de 15s: o Apps Script pode demorar alguns segundos pra
+      // responder (cold start), mas sem um limite o botão fica preso em
+      // "Enviando..." indefinidamente se a rede travar de vez.
+      const controle = new AbortController();
+      const tempoEsgotado = setTimeout(() => controle.abort(), 15000);
+
       fetch(APPS_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(dados),
+        signal: controle.signal,
       })
         .then(() => {
           sucesso.classList.add('visivel');
@@ -484,6 +491,7 @@
           if (erroEnvio) erroEnvio.classList.add('visivel');
         })
         .finally(() => {
+          clearTimeout(tempoEsgotado);
           btnEnviar.disabled = false;
           btnEnviar.textContent = textoBtnOriginal;
         });
