@@ -22,6 +22,19 @@ Rodando localmente:
 node .claude/static-server.js
 ```
 
+## Importante: cache-busting em toda publicação
+
+`index.html` referencia `style.css?v=N` e `script.js?v=N`. **Sempre que
+`style.css` ou `script.js` forem alterados, incremente o `v=N` correspondente
+em `index.html` antes de publicar.**
+
+Sem isso, quem já visitou o site antes continua rodando a versão antiga em
+cache — já aconteceu duas vezes neste projeto (a imagem do hero sumiu depois
+de um deploy, e o formulário de contato ficou travado em "Enviando..." porque
+o navegador reusou um `script.js` de antes da URL do Apps Script ser
+configurada). Mudar a query string força o navegador a buscar o arquivo de
+novo, mesmo em cache antigo.
+
 ## Pendências para preencher
 
 Todos os pontos abaixo estão marcados com `TODO` no código.
