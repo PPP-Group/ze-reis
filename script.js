@@ -409,9 +409,7 @@
 
   /* ═══════════ 10 · FORMULÁRIO ═══════════ */
   (function formulario() {
-    // TODO: colar aqui a URL do Apps Script (termina em /exec) depois de
-    // implantar docs/apps-script-formulario.gs como "App da Web".
-    const APPS_SCRIPT_URL = 'URL_DO_APPS_SCRIPT';
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxQH7B3dZNCJgOFJqjrsP9BdfoJUVUFpZgjQ-vfP5hWMlkJPrTmGt-Z2Sc24Zhqh3ou/exec';
 
     const form = $('#formContato');
     const sucesso = $('#formSucesso');
