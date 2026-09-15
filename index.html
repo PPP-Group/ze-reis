@@ -573,11 +573,14 @@
           <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
           <span class="erro" data-erro="mensagem"></span>
         </div>
-        <!-- Sem backend: a submissão é validada e confirmada apenas no front.
-             TODO: apontar o action/fetch para o endpoint da campanha. -->
+        <!-- Envio grava direto numa planilha via Apps Script Web App.
+             Ver docs/apps-script-formulario.gs e README.md para configurar. -->
         <button type="submit" class="btn btn-laranja btn-bloco">Enviar mensagem</button>
         <p class="form-sucesso" id="formSucesso" role="status">
           Mensagem enviada! A equipe do Zé Reis vai retornar em breve.
+        </p>
+        <p class="form-erro" id="formErro" role="alert">
+          Não deu pra enviar agora. Confira sua internet e tente de novo.
         </p>
       </form>
 

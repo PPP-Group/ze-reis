@@ -409,9 +409,17 @@
 
   /* ═══════════ 10 · FORMULÁRIO ═══════════ */
   (function formulario() {
+    // TODO: colar aqui a URL do Apps Script (termina em /exec) depois de
+    // implantar docs/apps-script-formulario.gs como "App da Web".
+    const APPS_SCRIPT_URL = 'URL_DO_APPS_SCRIPT';
+
     const form = $('#formContato');
     const sucesso = $('#formSucesso');
+    const erroEnvio = $('#formErro');
     if (!form) return;
+
+    const btnEnviar = $('button[type="submit"]', form);
+    const textoBtnOriginal = btnEnviar.textContent;
 
     const regras = {
       nome:     (v) => v.trim().length >= 2 || 'Informe seu nome.',
@@ -446,10 +454,41 @@
         if (primeiro) primeiro.focus();
         return;
       }
-      // TODO: enviar para o endpoint da campanha (fetch/POST).
-      sucesso.classList.add('visivel');
-      form.reset();
-      setTimeout(() => sucesso.classList.remove('visivel'), 6000);
+
+      sucesso.classList.remove('visivel');
+      if (erroEnvio) erroEnvio.classList.remove('visivel');
+      btnEnviar.disabled = true;
+      btnEnviar.textContent = 'Enviando...';
+
+      const dados = {
+        nome: form.elements.nome.value.trim(),
+        email: form.elements.email.value.trim(),
+        telefone: form.elements.telefone.value.trim(),
+        mensagem: form.elements.mensagem.value.trim(),
+      };
+
+      // mode:'no-cors' é necessário porque o Apps Script Web App não responde
+      // com cabeçalhos CORS. Isso impede ler o corpo da resposta: "sucesso"
+      // aqui significa apenas que o fetch não lançou erro de rede, não uma
+      // confirmação vinda do servidor. É a limitação conhecida dessa técnica.
+      fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(dados),
+      })
+        .then(() => {
+          sucesso.classList.add('visivel');
+          form.reset();
+          setTimeout(() => sucesso.classList.remove('visivel'), 6000);
+        })
+        .catch(() => {
+          if (erroEnvio) erroEnvio.classList.add('visivel');
+        })
+        .finally(() => {
+          btnEnviar.disabled = false;
+          btnEnviar.textContent = textoBtnOriginal;
+        });
     });
 
     // CTA "Quero ser voluntário"
